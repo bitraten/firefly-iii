@@ -1335,6 +1335,20 @@ Route::group(
     }
 );
 
+// Transaction Duplicates Controller.
+Route::group(
+    [
+        'middleware' => 'user-full-auth',
+        'namespace'  => 'FireflyIII\Http\Controllers',
+        'prefix'     => 'transactions/duplicates',
+        'as'         => 'transactions.duplicates.',
+    ],
+    static function (): void {
+        Route::get('', ['uses' => 'DuplicateTransactionController@index', 'as' => 'index']);
+        Route::post('delete', ['uses' => 'DuplicateTransactionController@delete', 'as' => 'delete']);
+    }
+);
+
 // Transaction Link Controller.
 Route::group(
     ['middleware' => 'user-full-auth', 'namespace' => 'FireflyIII\Http\Controllers\Transaction', 'prefix' => 'transactions/link', 'as' => 'transactions.link.'],
