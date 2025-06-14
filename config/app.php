@@ -140,6 +140,7 @@ return [
         TagServiceProvider::class,
         AdminServiceProvider::class,
         RecurringServiceProvider::class,
+        FireflyIII\Providers\DuplicateTransactionServiceProvider::class,
     ],
     'aliases'         => [
         'Auth'          => Auth::class,

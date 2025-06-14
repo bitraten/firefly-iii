@@ -1149,6 +1149,14 @@ Breadcrumbs::for(
 );
 
 Breadcrumbs::for(
+    'transactions.duplicates.index',
+    static function (Generator $breadcrumbs): void {
+        $breadcrumbs->parent('transactions.index', 'all');
+        $breadcrumbs->push(trans('firefly.duplicate_transactions'), route('transactions.duplicates.index'));
+    }
+);
+
+Breadcrumbs::for(
     'transactions.create',
     static function (Generator $breadcrumbs, string $objectType): void {
         $breadcrumbs->parent('transactions.index', $objectType);

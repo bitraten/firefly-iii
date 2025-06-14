@@ -82,6 +82,12 @@
                                 <p>{{ __('firefly.all_transactions') }}</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('transactions.duplicates.index') }}" class="nav-link @partialroute('transactions.duplicates') active @endpartialroute">
+                                <i class="nav-icon fa-solid fa-copy"></i>
+                                <p>{{ __('firefly.duplicate_transactions') }}</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
